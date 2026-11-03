@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>配對小考｜詞與詞之間</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="quiz.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><a href="index.html" class="brand">詞與詞之間 <span>ことばの間</span></a><a href="index.html" class="quiz-exit">結束練習，回首頁</a></header>
+  <main>
+    <section class="quiz quiz-page" aria-labelledby="quiz-title">
+      <div class="section-heading"><div><p class="kicker">ことばの練習</p><h1 id="quiz-title">配對小考</h1></div></div>
+      <p>將日文拖到對應的意思；也可以先點選詞語，再點選意思方框。已放入的詞語可再次拖移或點選調整。</p>
+      <button type="button" class="quiz-action" id="quiz-start" hidden>再練習一次</button>
+      <div id="quiz-area" hidden>
+        <p id="quiz-progress"></p>
+        <div id="quiz-words" class="quiz-words" aria-label="待配對的詞語"></div>
+        <div id="quiz-targets" class="quiz-targets"></div>
+        <p id="quiz-feedback" role="status" aria-live="polite"></p>
+        <button type="button" class="quiz-action" id="quiz-check">檢查答案</button>
+        <button type="button" class="quiz-action" id="quiz-next" hidden>下一題</button>
+      </div>
+      <a class="quiz-exit quiz-exit-bottom" href="index.html">結束練習，回首頁</a>
+    </section>
+  </main>
+</body>
+</html>

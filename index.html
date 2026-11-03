@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>詞與詞之間｜日文比較筆記</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><a href="./" class="brand">詞與詞之間 <span>ことばの間</span></a><span class="header-note">日文比較筆記</span></header>
+  <main>
+    <section class="intro">
+      <p class="kicker">日語學習的小小發現</p>
+      <h1>意思很像，<br><em>用法哪裡不一樣？</em></h1>
+      <p>把容易混淆的日文放在一起比較。<br>先想一想，再翻開卡片看看差別。</p>
+    </section>
+    <section class="quiz" aria-labelledby="quiz-title">
+      <div class="section-heading"><div><p class="kicker">ことばの練習</p><h2 id="quiz-title">配對小考</h2></div></div>
+      <p>一張卡片是一題。將日文拖到對應的意思；也可以先點選詞語，再點選意思方框；已放入的詞語可再次拖移或點選來調整。</p>
+      <button type="button" class="quiz-action" id="quiz-start">開始練習</button>
+      <div id="quiz-area" hidden>
+        <p id="quiz-progress"></p>
+        <div id="quiz-words" class="quiz-words" aria-label="待配對的詞語"></div>
+        <div id="quiz-targets" class="quiz-targets"></div>
+        <p id="quiz-feedback" role="status" aria-live="polite"></p>
+        <button type="button" class="quiz-action" id="quiz-check">檢查答案</button>
+        <button type="button" class="quiz-action" id="quiz-next" hidden>下一題</button>
+      </div>
+    </section>
+    <section class="collection" aria-labelledby="collection-title">
+      <div class="section-heading"><div><p class="kicker">ことばのカード</p><h2 id="collection-title">選一張卡片</h2></div><p>點擊卡片翻面，再點一次翻回來</p></div>
+      <div class="filters" role="group" aria-label="卡片分類">
+        <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">全部</button>
+        <button type="button" class="filter" data-filter="time" aria-pressed="false">時間與順序</button>
+        <button type="button" class="filter" data-filter="style" aria-pressed="false">日常與正式</button>
+        <button type="button" class="filter" data-filter="usage" aria-pressed="false">用法與語感</button>
+      </div>
+      <div class="cards">
+        <article class="card" data-card data-category="time">
+          <button class="card-button" type="button" aria-expanded="false" aria-controls="answer-ato" aria-label="翻開あとから與あとで的比較">
+            <span class="card-inner"><span class="face front"><span class="card-type">時間與順序</span><span class="question" lang="ja">あとから <small>vs</small><br>あとで <b>?</b></span><span class="card-hint">翻開看看 <span aria-hidden="true">↗</span></span></span>
+            <span class="face back" aria-hidden="true"><span class="answer-title">晚點做，還是稍後跟上？</span><span class="answer-row"><strong lang="ja">あとから</strong><span>強調前面已有某人或某個階段，之後再跟上、加入或追加。</span></span><span class="answer-row"><strong lang="ja">あとで</strong><span>單純表示在較晚的時間做某事。</span></span><span class="example" lang="ja">あとで電話します。<br><span lang="zh-Hant">我晚一點再打電話。</span></span><span class="card-hint">翻回正面 ↶</span></span></span>
+          </button><div id="answer-ato" class="sr-only" hidden>あとから強調前後順序或後續加入；あとで表示晚一點做。あとで電話します：我晚一點再打電話。</div>
+        </article>
+
+        <article class="card card-blue" data-card data-category="style">
+          <button class="card-button" type="button" aria-expanded="false" aria-controls="answer-new-1" aria-label="翻開金額、価格、値段的比較">
+            <span class="card-inner"><span class="face front"><span class="card-type">日常與正式</span><span class="question question-long" lang="ja">金額 <small>vs</small><br>価格 <small>vs</small><br>値段 <b>?</b></span><span class="card-hint">翻開看看 <span aria-hidden="true">↗</span></span></span>
+            <span class="face back" aria-hidden="true"><span class="answer-title">款項數字與商品價格</span><span class="answer-row"><strong lang="ja">金額</strong><span>付款或退款等款項的具體數字。</span></span><span class="answer-row"><strong lang="ja">価格</strong><span>正式、客觀的商品或市場價格。</span></span><span class="answer-row"><strong lang="ja">値段</strong><span>日常購物時所說的價錢。</span></span><span class="example" lang="ja">これ、値段はいくらですか。<br><span lang="zh-Hant">這個多少錢？</span></span><span class="card-hint">翻回正面 ↶</span></span></span>
+          </button><div id="answer-new-1" class="sr-only" hidden>款項數字與商品價格。金額：付款或退款等款項的具體數字。；価格：正式、客觀的商品或市場價格。；値段：日常購物時所說的價錢。。これ、値段はいくらですか。 這個多少錢？</div>
+        </article>
+        <article class="card card-blue" data-card data-category="usage">
+          <button class="card-button" type="button" aria-expanded="false" aria-controls="answer-new-2" aria-label="翻開しれっと、さりげなく、何気なく的比較">
+            <span class="card-inner"><span class="face front"><span class="card-type">用法與語感</span><span class="question question-long" lang="ja">しれっと <small>vs</small><br>さりげなく <small>vs</small><br>何気なく <b>?</b></span><span class="card-hint">翻開看看 <span aria-hidden="true">↗</span></span></span>
+            <span class="face back" aria-hidden="true"><span class="answer-title">有意無意的差別</span><span class="answer-row"><strong lang="ja">しれっと</strong><span>明明引人注意，卻若無其事。</span></span><span class="answer-row"><strong lang="ja">さりげなく</strong><span>有意做得自然、不露痕跡。</span></span><span class="answer-row"><strong lang="ja">何気なく</strong><span>沒有特別意圖，不經意地做。</span></span><span class="example" lang="ja">何気なく窓の外を見た。<br><span lang="zh-Hant">我不經意地看向窗外。</span></span><span class="card-hint">翻回正面 ↶</span></span></span>
+          </button><div id="answer-new-2" class="sr-only" hidden>有意無意的差別。しれっと：明明引人注意，卻若無其事。；さりげなく：有意做得自然、不露痕跡。；何気なく：沒有特別意圖，不經意地做。。何気なく窓の外を見た。 我不經意地看向窗外。</div>
+        </article>
+        <article class="card card-blue" data-card data-category="usage">
+          <button class="card-button" type="button" aria-expanded="false" aria-controls="answer-new-3" aria-label="翻開手で取る、手に取る的比較">
+            <span class="card-inner"><span class="face front"><span class="card-type">用法與語感</span><span class="question " lang="ja">手で取る <small>vs</small><br>手に取る <b>?</b></span><span class="card-hint">翻開看看 <span aria-hidden="true">↗</span></span></span>
+            <span class="face back" aria-hidden="true"><span class="answer-title">方法與結果的差別</span><span class="answer-row"><strong lang="ja">手で取る</strong><span>強調用手，而非工具。</span></span><span class="answer-row"><strong lang="ja">手に取る</strong><span>強調把物品拿到手中。</span></span><span class="example" lang="ja">棚にあった本を手に取って、表紙を見た。<br><span lang="zh-Hant">我拿起架上的書，看了封面。</span></span><span class="card-hint">翻回正面 ↶</span></span></span>
+          </button><div id="answer-new-3" class="sr-only" hidden>方法與結果的差別。手で取る：強調用手，而非工具。；手に取る：強調把物品拿到手中。。棚にあった本を手に取って、表紙を見た。 我拿起架上的書，看了封面。</div>
+        </article>
+        <article class="card card-blue" data-card data-category="usage">
+          <button class="card-button" type="button" aria-expanded="false" aria-controls="answer-new-4" aria-label="翻開滅多に、あまり的比較">
+            <span class="card-inner"><span class="face front"><span class="card-type">用法與語感</span><span class="question " lang="ja">滅多に <small>vs</small><br>あまり <b>?</b></span><span class="card-hint">翻開看看 <span aria-hidden="true">↗</span></span></span>
+            <span class="face back" aria-hidden="true"><span class="answer-title">頻率與程度的差別</span><span class="answer-row"><strong lang="ja">滅多に～ない</strong><span>表示事情極少發生。</span></span><span class="answer-row"><strong lang="ja">あまり～ない</strong><span>表示不太常，也可描述程度不高。</span></span><span class="example" lang="ja">この料理はあまり辛くない。<br><span lang="zh-Hant">這道菜不太辣。</span></span><span class="card-hint">翻回正面 ↶</span></span></span>
+          </button><div id="answer-new-4" class="sr-only" hidden>頻率與程度的差別。滅多に～ない：表示事情極少發生。；あまり～ない：表示不太常，也可描述程度不高。。この料理はあまり辛くない。 這道菜不太辣。</div>
+        </article>
+        <article class="card card-blue" data-card data-category="usage">
+          <button class="card-button" type="button" aria-expanded="false" aria-controls="answer-new-5" aria-label="翻開だけ、しか～ない的比較">
+            <span class="card-inner"><span class="face front"><span class="card-type">用法與語感</span><span class="question " lang="ja">だけ <small>vs</small><br>しか～ない <b>?</b></span><span class="card-hint">翻開看看 <span aria-hidden="true">↗</span></span></span>
+            <span class="face back" aria-hidden="true"><span class="answer-title">中性限定與強調稀少</span><span class="answer-row"><strong lang="ja">だけ</strong><span>中性限定範圍，不一定表示太少。</span></span><span class="answer-row"><strong lang="ja">しか～ない</strong><span>強調除此之外沒有；須搭配否定形式。</span></span><span class="example" lang="ja">仕事は一件しかない。<br><span lang="zh-Hant">工作才一件。</span></span><span class="card-hint">翻回正面 ↶</span></span></span>
+          </button><div id="answer-new-5" class="sr-only" hidden>中性限定與強調稀少。だけ：中性限定範圍，不一定表示太少。；しか～ない：強調除此之外沒有；須搭配否定形式。。仕事は一件しかない。 工作才一件。</div>
+        </article>
+        <article class="card card-blue" data-card data-category="usage">
+          <button class="card-button" type="button" aria-expanded="false" aria-controls="answer-new-6" aria-label="翻開要は、とにかく的比較">
+            <span class="card-inner"><span class="face front"><span class="card-type">用法與語感</span><span class="question " lang="ja">要は <small>vs</small><br>とにかく <b>?</b></span><span class="card-hint">翻開看看 <span aria-hidden="true">↗</span></span></span>
+            <span class="face back" aria-hidden="true"><span class="answer-title">歸納結論與優先行動</span><span class="answer-row"><strong lang="ja">要は</strong><span>把前面的內容歸納成核心結論。</span></span><span class="answer-row"><strong lang="ja">とにかく</strong><span>擱置細節，優先處理眼前的事。</span></span><span class="example" lang="ja">とにかく一度やってみよう。<br><span lang="zh-Hant">不管怎樣，先試一次看看吧。</span></span><span class="card-hint">翻回正面 ↶</span></span></span>
+          </button><div id="answer-new-6" class="sr-only" hidden>歸納結論與優先行動。要は：把前面的內容歸納成核心結論。；とにかく：擱置細節，優先處理眼前的事。。とにかく一度やってみよう。 不管怎樣，先試一次看看吧。</div>
+        </article>
+        <article class="card card-blue" data-card data-category="time">
+          <button class="card-button" type="button" aria-expanded="false" aria-controls="answer-new-7" aria-label="翻開そもそも、もともと的比較">
+            <span class="card-inner"><span class="face front"><span class="card-type">時間與順序</span><span class="question " lang="ja">そもそも <small>vs</small><br>もともと <b>?</b></span><span class="card-hint">翻開看看 <span aria-hidden="true">↗</span></span></span>
+            <span class="face back" aria-hidden="true"><span class="answer-title">根本前提與原有狀態</span><span class="answer-row"><strong lang="ja">そもそも</strong><span>回到事情的起點或根本前提。</span></span><span class="answer-row"><strong lang="ja">もともと</strong><span>描述原本的狀態、性質或計畫。</span></span><span class="example" lang="ja">この建物はもともと学校だった。<br><span lang="zh-Hant">這棟建築原本是學校。</span></span><span class="card-hint">翻回正面 ↶</span></span></span>
+          </button><div id="answer-new-7" class="sr-only" hidden>根本前提與原有狀態。そもそも：回到事情的起點或根本前提。；もともと：描述原本的狀態、性質或計畫。。この建物はもともと学校だった。 這棟建築原本是學校。</div>
+        </article>
+        <article class="card card-blue" data-card data-category="usage">
+          <button class="card-button" type="button" aria-expanded="false" aria-controls="answer-new-8" aria-label="翻開おびやかす、おどかす、おどす的比較">
+            <span class="card-inner"><span class="face front"><span class="card-type">用法與語感</span><span class="question question-long" lang="ja">おびやかす <small>vs</small><br>おどかす <small>vs</small><br>おどす <b>?</b></span><span class="card-hint">翻開看看 <span aria-hidden="true">↗</span></span></span>
+            <span class="face back" aria-hidden="true"><span class="answer-title">危及、嚇人、恐嚇</span><span class="answer-row"><strong lang="ja">脅かす（おびやかす）</strong><span>危及生命、安全或地位。</span></span><span class="answer-row"><strong lang="ja">脅かす（おどかす）</strong><span>使人受到驚嚇。</span></span><span class="answer-row"><strong lang="ja">脅す（おどす）</strong><span>以不利後果威逼對方。</span></span><span class="example" lang="ja">その病気は彼の命を脅かしている。<br><span lang="zh-Hant">那個疾病正威脅著他的生命。</span></span><span class="card-hint">翻回正面 ↶</span></span></span>
+          </button><div id="answer-new-8" class="sr-only" hidden>危及、嚇人、恐嚇。脅かす（おびやかす）：危及生命、安全或地位。；脅かす（おどかす）：使人受到驚嚇。；脅す（おどす）：以不利後果威逼對方。。その病気は彼の命を脅かしている。 那個疾病正威脅著他的生命。</div>
+        </article>
+        <article class="card card-blue" data-card data-category="usage">
+          <button class="card-button" type="button" aria-expanded="false" aria-controls="answer-new-9" aria-label="翻開怠る、怠ける的比較">
+            <span class="card-inner"><span class="face front"><span class="card-type">用法與語感</span><span class="question " lang="ja">怠る <small>vs</small><br>怠ける <b>?</b></span><span class="card-hint">翻開看看 <span aria-hidden="true">↗</span></span></span>
+            <span class="face back" aria-hidden="true"><span class="answer-title">疏於履行與懶惰</span><span class="answer-row"><strong lang="ja">怠る</strong><span>應做的職責或必要行動未確實履行。</span></span><span class="answer-row"><strong lang="ja">怠ける</strong><span>因懶惰而不認真做事。</span></span><span class="example" lang="ja">安全確認を怠ったため、事故が起きた。<br><span lang="zh-Hant">因為疏於安全確認，發生了事故。</span></span><span class="card-hint">翻回正面 ↶</span></span></span>
+          </button><div id="answer-new-9" class="sr-only" hidden>疏於履行與懶惰。怠る：應做的職責或必要行動未確實履行。；怠ける：因懶惰而不認真做事。。安全確認を怠ったため、事故が起きた。 因為疏於安全確認，發生了事故。</div>
+        </article>
+      </div>
+      <p class="footnote">整理自日文學習筆記。用法仍會隨語境改變。</p>
+    </section>
+  </main>
+  <footer><span>詞與詞之間</span><span>一點一點，讀懂日文的細微差別。</span></footer>
+</body>
+</html>
